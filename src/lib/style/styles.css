@@ -1,4 +1,50 @@
+.light {
+    /** Base colors */
+    --dark-a0: #000000;
+    --light-a0: #ffffff;
+
+    /** Theme primary colors */
+    --primary-a0: #401212;
+    --primary-a10: #3a1111;
+    --primary-a20: #33110f;
+    --primary-a30: #2d100d;
+    --primary-a40: #270f0b;
+    --primary-a50: #220d09;
+    --primary-a60: #1c0a07;
+    --primary-a70: #160704;
+    --primary-a80: #0d0302;
+    --primary-a90: #000000;
+
+    /** Theme surface colors */
+    --surface-a0: #35654d;
+    --surface-a10: #3e6852;
+    --surface-a20: #476b58;
+    --surface-a30: #4f6e5e;
+    --surface-a40: #587163;
+
+    /** Success colors */
+    --success-a0: #1b7f5c;
+    --success-a10: #28be8a;
+    --success-a20: #58dbad;
+
+    /** Warning colors */
+    --warning-a0: #b8871f;
+    --warning-a10: #dfae44;
+    --warning-a20: #ebca85;
+
+    /** Danger colors */
+    --danger-a0: #b13535;
+    --danger-a10: #d06262;
+    --danger-a20: #e29d9d;
+
+    /** Info colors */
+    --info-a0: #1e56a3;
+    --info-a10: #347ada;
+    --info-a20: #74a4e6;
+}
+
 body {
     height: 100%;
-    background: linear-gradient(to top, #001122 50%, #221100 50%) fixed;
+    color: var(--primary-a50);
+    background-color: var(--surface-a40);
 }
