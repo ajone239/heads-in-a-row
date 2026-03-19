@@ -1,7 +1,12 @@
 <script lang="ts">
+    import { enhance } from '$app/forms';
+
     import Coin from '$lib/components/Coin.svelte';
     import MainButton from '$lib/components/MainButton.svelte';
     import SecButton from '$lib/components/SecButton.svelte';
+    import type { PageData } from './$types';
+
+    let { data }: { data: PageData } = $props();
 
     let flipping = $state(false);
     let pending = $state(false);
@@ -57,6 +62,15 @@
 
     <div style="margin-top: 10px;">
         <input disabled={flipping} type="range" bind:value={flipTime} min="1" max="10" />
+    </div>
+
+    <div style="border: black 1px dashed; padding: 5px;">
+        <form method="post" action="?/signOut" use:enhance>
+            <p>Name: {data.user.name}</p>
+            <p>E-mail: {data.user.email}</p>
+            <p>Id: {data.user.id}</p>
+            <button>Logout</button>
+        </form>
     </div>
 </div>
 

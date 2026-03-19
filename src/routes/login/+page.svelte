@@ -27,5 +27,6 @@
     </div>
     <button>Login</button>
     <button formaction="?/signUpEmail">Register</button>
+    <button formaction="?/signInAnon">Continue as Guest</button>
 </form>
 <p style="color: red">{form?.message ?? ''}</p>

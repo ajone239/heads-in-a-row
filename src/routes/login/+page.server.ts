@@ -12,6 +12,21 @@ export const load: PageServerLoad = async (event) => {
 };
 
 export const actions: Actions = {
+    signInAnon: async (event) => {
+        try {
+            await auth.api.signInAnonymous({
+                headers: event.request.headers,
+            });
+        } catch (error) {
+            if (error instanceof APIError) {
+                return fail(400, { message: error.message || 'Signin failed' });
+            }
+            console.log(error)
+            return fail(500, { message: 'Unexpected error' });
+        }
+
+        return redirect(302, '/');
+    },
     signInEmail: async (event) => {
         const formData = await event.request.formData();
         const email = formData.get('email')?.toString() ?? '';
